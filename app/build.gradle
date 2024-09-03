@@ -1,0 +1,77 @@
+plugins {
+    id 'com.android.application'
+
+    //google-service (firebase)
+    id("com.google.gms.google-services")
+
+
+}
+
+android {
+    namespace 'com.example.barbershop'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.example.barbershop"
+        minSdk 24
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+}
+
+dependencies {
+
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.9.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+    //GIF Image
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.25'
+
+//    //Libraby Text Fields
+//    implementation 'com.google.android.material:material:<version>'
+
+    implementation 'com.pandora.bottomnavigator:bottom-navigator:1.2'
+
+    //Glide: Thu vien load anh
+    implementation 'com.github.bumptech.glide:glide:4.15.1'
+
+    implementation 'androidx.recyclerview:recyclerview:1.2.1'
+
+    //Picasso
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    implementation 'com.squareup.okhttp3:okhttp:4.2.1'
+
+    //Cloudinary sdk
+    implementation 'com.cloudinary:cloudinary-android:2.3.1'
+
+    // Import the Firebase BoM
+    implementation(platform("com.google.firebase:firebase-bom:32.2.0"))
+    implementation 'com.google.firebase:firebase-firestore:24.7.0'
+    implementation 'com.google.firebase:firebase-auth:19.3.2'
+
+    // Dexter runtime permissions
+    implementation 'com.karumi:dexter:6.2.3'
+
+    //Paypal
+    implementation 'com.paypal.sdk:paypal-android-sdk:2.16.0'
+
+}
